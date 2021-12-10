@@ -35,3 +35,7 @@ Route::resource('/categories', CategorieController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/dashboard',[App\Http\Controllers\MovieController::class, 'index'])->name('admin.route')->middleware('admin');
+Route::get('/client', [App\Http\Controllers\MovieController::class, 'index'])->name('client');
+Route::get('/admin', [App\Http\Controllers\SeasonController::class, 'index'])->name('admin');
+
