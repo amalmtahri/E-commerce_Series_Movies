@@ -504,6 +504,9 @@ License: For each use you must have a valid license purchased only from above li
 
 		<script src="{{ asset('assets/js/dropify.js')}}"></script>
 		
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{ asset('assets/js/custom/authentication/sign-in/general.js')}}"></script>
+		<!--end::Page Custom Javascript-->
 
 		<script>
         $('.dropify').dropify();
