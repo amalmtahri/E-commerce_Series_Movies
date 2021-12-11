@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function card()
+    {
+        return $this->hasOne('App\Models\Card');
+    }
     /**
      * The attributes that are mass assignable.
      *

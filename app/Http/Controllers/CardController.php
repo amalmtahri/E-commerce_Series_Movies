@@ -23,7 +23,7 @@ class CardController extends Controller
 
     public function clientCardItems()
     {      
-        $card = Card::all()->where('client_id',Auth::user()->id);
+        $card = Card::all()->where('user_id',Auth::user()->id);
         $cardLines = CardLine::all()->where('card_id',$card[0]->id);
         return view('template.panier',['cardLines'=>$cardLines]);
     }

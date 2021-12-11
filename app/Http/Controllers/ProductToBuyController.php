@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Models\ProductToBuy;
+use App\Models\CardLine;
 use Illuminate\Http\Request;
+
+use App\Models\Movie;
 
 class ProductToBuyController extends Controller
 {
@@ -33,9 +36,30 @@ class ProductToBuyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addMovie(Request $request)
     {
-        //
+        $product = new ProductToBuy();
+        $product->movie_id = $request->input('idMovie');
+        $product->save();
+        $user=Auth::user();
+        $cardLine = new CardLine();
+        $cardLine->card_id = $user->card->id;
+        $cardLine->productToBuy_id = $product->id;
+        $cardLine->save();
+        return back(); 
+    }
+
+    public function addSeason(Request $request)
+    {
+        $product = new ProductToBuy();
+        $product->season_id = $request->input('idSeason');
+        $product->save();
+        $user=Auth::user();
+        $cardLine = new CardLine();
+        $cardLine->card_id = $user->card->id;
+        $cardLine->productToBuy_id = $product->id;
+        $cardLine->save();
+        return back(); 
     }
 
     /**

@@ -1,167 +1,153 @@
 @extends('template.layouts.app')
 
 @section('content')
+@push('test')
 
-<!--begin::Container-->
-<div class="container">
+@endpush
 
-    <!--begin::filter-->
-    <div class="toolbar" id="kt_toolbar" data-select2-id="select2-data-kt_toolbar">
+<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg"
+    style="background-image: url('{{url('assets/media/6993439.png')}}');background-size: cover;background-position: center;">
+    <!--begin::Header-->
+    <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
+        data-kt-sticky-offset="{default: '200px', lg: '300px'}">
         <!--begin::Container-->
-        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack" data-select2-id="select2-data-kt_toolbar_container"><div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                
-            </div>
-            <!--begin::Page title-->
-            
-            <!--end::Page title-->
-            <!--begin::Actions-->
-            <div class="d-flex align-items-center py-1" data-select2-id="select2-data-72-t3mg">
-                <!--begin::Wrapper-->
-                <div class="">
-                    <!--begin::Menu-->
-                    <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                    <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                    <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black"></path>
-                        </svg>
-                    </span>
-                    <!--end::Svg Icon-->Filter</a>
-                    <!--begin::Menu 1-->
-                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_616838fb2edc9" style="">
-                        <!--begin::Header-->
-                        <div class="px-7 py-5">
-                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Menu separator-->
-                        <div class="separator border-gray-200"></div>
-                        <!--end::Menu separator-->
-                        <!--begin::Form-->
-                        <div class="px-7 py-5">
-                            <!--begin::Input group-->
-                            <div class="mb-10" data-select2-id="select2-data-71-lj6v">
-                                <!--begin::Label-->
-                                <label class="form-label fw-bold">Status:</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <div>
-                                    <select class="form-select form-select-solid select2-hidden-accessible" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_616838fb2edc9" data-allow-clear="true" data-select2-id="select2-data-7-y06f" tabindex="-1" aria-hidden="true">
-                                        <option data-select2-id="select2-data-9-u9xz"></option>
-                                        <option value="1" data-select2-id="select2-data-76-h53s">Approved</option>
-                                        <option value="2" data-select2-id="select2-data-77-dcpe">Pending</option>
-                                        <option value="2" data-select2-id="select2-data-78-jt7w">In Process</option>
-                                        <option value="2" data-select2-id="select2-data-79-q5v9">Rejected</option>
-                                    </select><span class="select2 select2-container select2-container--bootstrap5 select2-container--below" dir="ltr" data-select2-id="select2-data-8-n7ym" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-eqlw-container" aria-controls="select2-eqlw-container"><span class="select2-selection__rendered" id="select2-eqlw-container" role="textbox" aria-readonly="true" title="Select option"><span class="select2-selection__placeholder">Select option</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                </div>
-                                <!--end::Input-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fw-bold">Member Type:</label>
-                                <!--end::Label-->
-                                <!--begin::Options-->
-                                <div class="d-flex">
-                                    <!--begin::Options-->
-                                    <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                        <input class="form-check-input" type="checkbox" value="1">
-                                        <span class="form-check-label">Author</span>
-                                    </label>
-                                    <!--end::Options-->
-                                    <!--begin::Options-->
-                                    <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" value="2" checked="checked">
-                                        <span class="form-check-label">Customer</span>
-                                    </label>
-                                    <!--end::Options-->
-                                </div>
-                                <!--end::Options-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="mb-10">
-                                <!--begin::Label-->
-                                <label class="form-label fw-bold">Notifications:</label>
-                                <!--end::Label-->
-                                <!--begin::Switch-->
-                                <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                    <input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked">
-                                    <label class="form-check-label">Enabled</label>
-                                </div>
-                                <!--end::Switch-->
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Actions-->
-                            <div class="d-flex justify-content-end">
-                                <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-                                <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-                            </div>
-                            <!--end::Actions-->
-                        </div>
-                        <!--end::Form-->
-                    </div>
-                    <!--end::Menu 1-->
-                    <!--end::Menu-->
+        <div class="container">
+            <!--begin::Wrapper-->
+            <div class="d-flex align-items-center justify-content-between">
+                <!--begin::Logo-->
+                <div class="d-flex align-items-center flex-equal">
+                    <!--begin::Mobile menu toggle-->
+                    <button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none"
+                        id="kt_landing_menu_toggle">
+                        <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+                        <span class="svg-icon svg-icon-2hx">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
+                                    fill="black" />
+                                <path opacity="0.3"
+                                    d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </button>
+                    <!--end::Mobile menu toggle-->
+                    <!--begin::Logo image-->
+                    <a href="{{ route('index')}}">
+                        <img alt="Logo" src="assets/media/logos/logo-landing.svg"
+                            class="logo-default h-25px h-lg-30px" />
+                    </a>
+                    <!--end::Logo image-->
                 </div>
-                <!--end::Wrapper-->
+                <!--end::Logo-->
+                <!--begin::Menu wrapper-->
+                <div class="d-lg-block" id="kt_header_nav_wrapper">
+                    <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu"
+                        data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+                        data-kt-drawer-width="200px" data-kt-drawer-direction="start"
+                        data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true"
+                        data-kt-swapper-mode="prepend"
+                        data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
+                        <!--begin::Menu-->
+                        <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-bold"
+                            id="kt_landing_menu">
+                            <!--begin::Menu item-->
+                            <div class="menu-item">
+                                <!--begin::Menu link-->
+                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="{{ route('index')}}"
+                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
+                                <!--end::Menu link-->
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu item-->
+                            <div class="menu-item">
+                                <!--begin::Menu link-->
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourMovies')}}" data-kt-scroll-toggle="true"
+                                    data-kt-drawer-dismiss="true">Movies</a>
+                                <!--end::Menu link-->
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu item-->
+                            <div class="menu-item">
+                                <!--begin::Menu link-->
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourSeries')}}" data-kt-scroll-toggle="true"
+                                    data-kt-drawer-dismiss="true">Series</a>
+                                <!--end::Menu link-->
+                            </div>
+                            <!--end::Menu item-->
+                        </div>
+                        <!--end::Menu-->
+                    </div>
+                </div>
+                <!--end::Menu wrapper-->
+                <!--begin::Toolbar-->
+                <div class="flex-equal text-end ms-1">
+
+                    @guest
+                    @if (Route::has('login'))
+                    <a href="{{ route('login') }}" class="btn btn-secondary">Sign In</a>
+                    @endif
+
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="btn btn-success">Sign Up</a>
+                    @endif
+                    @else
+
+                    <div class="menu-item px-5">
+                        <a class="btn btn-secondary" href="{{ route('panier') }}"><i class="fa fa-shopping-cart"
+                                aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign Out</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+                    </div>
+                    @endguest
+                </div>
+                <!--end::Toolbar-->
             </div>
-            <!--end::Actions-->
+            <!--end::Wrapper-->
         </div>
         <!--end::Container-->
     </div>
-    <!--end::filter-->
-
-    <!--begin::Heading-->
-    <div class="text-center mb-17">
-        <!--begin::Title-->
-        <h3 class="fs-2hx text-dark mb-5" id="how-it-works" data-kt-scroll-offset="{default: 100, lg: 150}">Latest Movies</h3>
-        <!--end::Title-->
-    </div>
-    <!--end::Heading-->
-
-    <!--begin::Row-->
-    <div class="row g-10">
-
-
-
-
-        <!--begin::Col-->
-        <div class="col-md-3">
-            <!--begin::Feature post-->
-            <div class="card-xl-stretch me-md-6">
-                <!--begin::Image-->
-                <a href="" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-400px mb-5" style="background-image:url('https://thumbnail-lg.shofda.net/uploads/m-red-stone-20211204-175036.webp')">
-                    <!-- <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" /> -->
-                </a>
-                <!--end::Image-->
-                <!--begin::Body-->
-                <div class="m-0">
-                    <!--begin::Title-->
-                    <a href="#" class="fs-5 text-dark fw-bolder text-hover-primary text-dark lh-base">Metronic Admin - How To Started the Dashboard Tutorial</a>
-                    <!--end::Title-->
-                    <!--begin::Content-->
-                    <div class="fs-6 fw-bolder">
-                        <!--begin::Author-->
-                        <a href=".#" class=" text-danger  float-end ">Action</a>
-                        <!--end::Author-->
-                    </div>
-                    <!--end::Content-->
-                </div>
-                <!--end::Body-->
-            </div>
-            <!--end::Feature post-->
+    <!--end::Header-->
+    <!--begin::Landing hero-->
+    <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
+        <!--begin::Heading-->
+        <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
+            <!--begin::Title-->
+            <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">
+                <br />Square Movies</h1>
+                <p class="text-white">If you’re looking for movies that the whole family can enjoy, then Disney Plus is simply unbeatable. You’ll find almost every Disney movie on there, along with the entire back catalog of Pixar, Marvel, and Star Wars movies. That’s a staggering amount of top quality movies for you to watch.</p>
+            <!--end::Title-->
+            <!--begin::Action-->
+            <a href="{{ route('ourMovies') }}" class="btn btn-primary">Our Movies</a>
+            <!--end::Action-->
         </div>
-        <!--end::Col-->
-
-
-
-        
+        <!--end::Heading-->
     </div>
-    <!--end::Row-->
+    <!--end::Landing hero-->
 </div>
-<!--end::Container-->
+<!--begin::Container-->
+<div class="container">
+    <div class="mb-0" id="home">
+        <!--begin::Wrapper-->
 
+        <!--end::Wrapper-->
+        <!--begin::Curve bottom-->
+        <div class="landing-curve landing-dark-color mb-10 mb-lg-20">
+            <svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z"
+                    fill="currentColor"></path>
+            </svg>
+        </div>
+        <!--end::Curve bottom-->
+    </div>
+    <!--end::Header Section-->
 
+</div>
 @endsection

@@ -1,8 +1,4 @@
-<!--begin::Header Section-->
-<div class="mb-0" id="home">
-    <!--begin::Wrapper-->
-    <div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg" style="background-image: url(assets/media/6993439.png);background-size: cover;background-position: center;">
-        <!--begin::Header-->
+
         <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
             <!--begin::Container-->
             <div class="container">
@@ -23,9 +19,8 @@
                         </button>
                         <!--end::Mobile menu toggle-->
                         <!--begin::Logo image-->
-                        <a href="../../demo1/dist/landing.html">
+                        <a href="{{ route('index')}}">
                             <img alt="Logo" src="assets/media/logos/logo-landing.svg" class="logo-default h-25px h-lg-30px" />
-                            <img alt="Logo" src="assets/media/logos/logo-landing-dark.svg" class="logo-sticky h-20px h-lg-25px" />
                         </a>
                         <!--end::Logo image-->
                     </div>
@@ -45,14 +40,14 @@
                                 <!--begin::Menu item-->
                                 <div class="menu-item">
                                     <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Movies</a>
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourMovies')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Movies</a>
                                     <!--end::Menu link-->
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item">
                                     <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Series</a>
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourSeries')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Series</a>
                                     <!--end::Menu link-->
                                 </div>
                                 <!--end::Menu item-->
@@ -73,53 +68,22 @@
                             <a href="{{ route('register') }}" class="btn btn-success">Sign Up</a>
                         @endif
                     @else
-                       <!--begin::Menu-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content d-flex align-items-center px-3">
-                                        <!--begin::Avatar-->
-                                        <div class="symbol symbol-50px me-5">
-                                            <img alt="Logo" src="{{ asset('assets/media/avatars/150-26.jpg')}}" />
-                                        </div>
-                                        <!--end::Avatar-->
-                                        <!--begin::Username-->
-                                        <div class="d-flex flex-column">
-                                            <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::user()->name }}
-                                            <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
-                                            <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
-                                        </div>
-                                        <!--end::Username-->
-                                    </div>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator my-2"></div>
-                                <!--end::Menu separator-->
-                                
-                                <!--begin::Menu separator-->
-                                <div class="separator my-2"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                        
-                            
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-5">
-                                    <a href="" class="menu-link px-5" href="{{ route('logout') }}"
+                       
+                        <div class="menu-item px-5">
+                        <a class="btn btn-secondary" href="{{ route('panier') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                    <a class="btn btn-secondary" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">Sign Out</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
-                                </div>
+                           
+                         </div>
+
+                         
                     
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator my-2"></div>
-                                <!--end::Menu separator-->
-                            </div>
-                        <!--end::Menu-->
+
                     @endguest
                     </div>
                     <!--end::Toolbar-->
@@ -129,29 +93,4 @@
             <!--end::Container-->
         </div>
         <!--end::Header-->
-        <!--begin::Landing hero-->
-        <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
-            <!--begin::Heading-->
-            <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
-                <!--begin::Title-->
-                <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">Build An Outstanding Solutions
-                <br />with The Best Theme Ever</h1>
-                <!--end::Title-->
-                <!--begin::Action-->
-                <a href="../../demo1/dist/index.html" class="btn btn-primary">Try Metronic</a>
-                <!--end::Action-->
-            </div>
-            <!--end::Heading-->
-        </div>
-        <!--end::Landing hero-->
-    </div>
-    <!--end::Wrapper-->
-    <!--begin::Curve bottom-->
-    <div class="landing-curve landing-dark-color mb-10 mb-lg-20">
-        <svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z" fill="currentColor"></path>
-        </svg>
-    </div>
-    <!--end::Curve bottom-->
-</div>
-<!--end::Header Section-->
+    

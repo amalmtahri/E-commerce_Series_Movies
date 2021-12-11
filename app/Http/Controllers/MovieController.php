@@ -19,6 +19,10 @@ class MovieController extends Controller
         $categories = Categorie::all();
         return view('Dashboard.movies.index',['movies'=>$listMovies,'categories'=>$categories]);
     }
+    public function ourMovies(){
+        $listMovies = Movie::all();
+        return view('template.ourMovies',['movies'=>$listMovies]);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -1,4 +1,4 @@
-@extends('Dashboard.dashboard')
+@extends('template.layouts.app')
 @section('content')
 
 <div class="container">
@@ -13,6 +13,10 @@
             </tr>
         </thead>
         <tbody>
+       @php 
+       $total=0;
+
+       @endphp
             @foreach($cardLines as $cardLine)
          
             @if($cardLine->productToBuy->season_id != null)
@@ -22,6 +26,7 @@
                         <td>{{$cardLine->productToBuy->product->serie->price}}</td>
                         <td></td>
                     </tr>
+                    @php $total = $total +$cardLine->productToBuy->product->serie->price  @endphp
              @else
                     <tr>
                          <td><img src="{{url('assets/img/'.$cardLine->productToBuy->product->poster)}} " class="rounded-circle" width="50px" height="50px" alt=""> </td>
@@ -30,12 +35,25 @@
                         <td>{{$cardLine->productToBuy->product->price}}</td>
                         <td></td>
                     </tr>
+                    @php $total  =$total + $cardLine->productToBuy->product->price @endphp
                 
             @endif
             
            @endforeach
+           <tr>
+                         <td><b>Total :</b> </td>
+
+                        <td></td>
+                        <td><b>{{ $total }}</b></td>
+                        <td>
+                           
+
+                        </td>
+                    </tr>
         </tbody>
     </table>
+
+    <a href="" class="btn btn-success float-end my-4">Validate your choice</a>
 </div>
 </div>
 @endsection

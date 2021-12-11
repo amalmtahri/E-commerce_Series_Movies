@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head><base href="">
+<head><base href="">
 		<title>Square Movies</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -39,7 +39,7 @@
 
 
     <!--end::Main-->
-		<script>var hostUrl = "assets/";</script>
+	<script>var hostUrl = "assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
 		<script src="{{ asset('assets/plugins/global/plugins.bundle.js')}}"></script>
@@ -59,8 +59,8 @@
 		<script src="{{ asset('assets/js/dropify.js')}}"></script>
 		
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{ asset('assets/js/custom/authentication/sign-in/general.js')}}"></script>
-        <script src="{{ asset('assets/js/custom/authentication/sign-up/general.js')}}"></script>
+		<!-- <script src="{{ asset('assets/js/custom/authentication/sign-in/general.js')}}"></script>
+        <script src="{{ asset('assets/js/custom/authentication/sign-up/general.js')}}"></script> -->
 		<!--end::Page Custom Javascript-->
 
 		<script>

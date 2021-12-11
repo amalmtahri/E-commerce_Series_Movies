@@ -21,6 +21,12 @@ class SerieController extends Controller
         return view('Dashboard.series.index',['series'=>$listSeries,'categories'=>$categories]);
     }
 
+    public function ourSeries(){
+        $listSeries = Serie::all();
+        return view('template.ourSeries',['series'=>$listSeries]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -63,9 +69,11 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function show(Serie $serie)
+    public function show($id)
     {
         //
+        $oneSerie = Serie::find($id);
+        return view('template.oneSerie',['oneSerie'=>$oneSerie]);
     }
 
     /**
@@ -77,6 +85,7 @@ class SerieController extends Controller
     public function edit(Serie $serie)
     {
         //
+
     }
 
     /**
