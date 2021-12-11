@@ -1,4 +1,4 @@
-@extends('template.layouts.app')
+@extends('template.layouts.app_login')
 
 @section('content')
 		<!--begin::Main-->
@@ -23,7 +23,7 @@
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">New Here?
-								<a href="../../demo1/dist/authentication/flows/basic/sign-up.html" class="link-primary fw-bolder">Create an Account</a></div>
+								<a href="{{ route('register') }}" class="link-primary fw-bolder">Create an Account</a></div>
 								<!--end::Link-->
 							</div>
 							<!--begin::Heading-->
@@ -94,9 +94,7 @@
 				<div class="d-flex flex-center flex-column-auto p-10">
 					<!--begin::Links-->
 					<div class="d-flex align-items-center fw-bold fs-6">
-						<a href="https://keenthemes.com" class="text-muted text-hover-primary px-2">About</a>
-						<a href="mailto:support@keenthemes.com" class="text-muted text-hover-primary px-2">Contact</a>
-						<a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2">Contact Us</a>
+						<a href="{{ route('index')}}" class="text-muted text-hover-primary px-2">Back to home </a>
 					</div>
 					<!--end::Links-->
 				</div>

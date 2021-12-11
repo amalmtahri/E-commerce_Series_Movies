@@ -23,31 +23,18 @@
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/dropify.css')}}" rel="stylesheet" type="text/css" />
-
+		
 
 		<!--end::Global Stylesheets Bundle-->
 </head>
 <body>
+    <div id="app">
+        
 
-    <!--begin::Main-->
-		<div class="d-flex flex-column flex-root">
-			<!--begin::Header Section-->
-			@include('template.layouts.header');
-			<!--end::Header Section-->
-			<!--begin::How It Works Section-->
-			<div id="app">
-
-                    @yield('content')
-            </div>
-			<!--end::How It Works Section-->
-			
-            {{-- begin:: footer  --}}
-            @include('template.layouts.footer');
-            {{-- end:: footer  --}}
-
-
-		</div>
-		<!--end::Main-->
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 
 
 
@@ -71,7 +58,10 @@
 
 		<script src="{{ asset('assets/js/dropify.js')}}"></script>
 		
-		
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{ asset('assets/js/custom/authentication/sign-in/general.js')}}"></script>
+        <script src="{{ asset('assets/js/custom/authentication/sign-up/general.js')}}"></script>
+		<!--end::Page Custom Javascript-->
 
 		<script>
         $('.dropify').dropify();
