@@ -15,6 +15,16 @@ class CardLineController extends Controller
     public function index()
     {
         //
+        $cardLines = CardLine::all();
+        return view('template.panier',['cardLines'=>$cardLines]);
+    }
+
+
+    public function clientCardLine($id)
+    {
+        
+        $cardLines = CardLine::all();
+        return view('template.panier',['cardLines'=>$cardLines]);
     }
 
     /**

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
     use HasFactory;
+    public function cardLine()
+    {
+        return $this->hasMany(CardLine::class);
+    }
 }

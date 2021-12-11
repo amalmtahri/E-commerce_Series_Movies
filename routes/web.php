@@ -6,6 +6,7 @@ use App\Http\Controllers\SerieController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\CardLineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +26,22 @@ Route::get('/movies', function () {
     return view('Dashboard.movies.index');
 });
 
+Route::get('/panier', function () {
+    return view('template.panier');
+});
+
 
 Route::resource('/movies', MovieController::class);
 Route::resource('/series', SerieController::class);
 Route::resource('/seasons', SeasonController::class);
 Route::resource('/episodes', EpisodeController::class);
 Route::resource('/categories', CategorieController::class);
+
+Route::resource('/cradLine', CardLineController::class);
+
+
+Route::get('/client/cradLine', [App\Http\Controllers\CardController::class, 'clientCardItems'])->name('clientCardItems');
+
 
 Auth::routes();
 

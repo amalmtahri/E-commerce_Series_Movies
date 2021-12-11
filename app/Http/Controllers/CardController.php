@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+
 use App\Models\Card;
+use App\Models\CardLine;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -15,6 +18,14 @@ class CardController extends Controller
     public function index()
     {
         //
+    }
+
+
+    public function clientCardItems()
+    {      
+        $card = Card::all()->where('client_id',Auth::user()->id);
+        $cardLines = CardLine::all()->where('card_id',$card[0]->id);
+        return view('template.panier',['cardLines'=>$cardLines]);
     }
 
     /**
