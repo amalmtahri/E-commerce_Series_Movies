@@ -20,8 +20,8 @@ use App\Http\Controllers\CardLineController;
 */
 
 Route::get('/', function () {
-    return view('HomePage');
-});
+    return view('template.index');
+})->name('index');
 Route::get('/movies', function () {
     return view('Dashboard.movies.index');
 });
