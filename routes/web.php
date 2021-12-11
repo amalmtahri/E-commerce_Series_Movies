@@ -19,7 +19,7 @@ use App\Http\Controllers\CategorieController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('HomePage');
 });
 Route::get('/movies', function () {
     return view('Dashboard.movies.index');
@@ -35,3 +35,7 @@ Route::resource('/categories', CategorieController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/dashboard',[App\Http\Controllers\MovieController::class, 'index'])->name('admin.route')->middleware('admin');
+Route::get('/client', [App\Http\Controllers\MovieController::class, 'index'])->name('client');
+Route::get('/admin', [App\Http\Controllers\SeasonController::class, 'index'])->name('admin');
+
