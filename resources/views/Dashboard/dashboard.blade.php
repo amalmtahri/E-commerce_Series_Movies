@@ -420,9 +420,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Avatar-->
 														<!--begin::Username-->
 														<div class="d-flex flex-column">
-															<div class="fw-bolder d-flex align-items-center fs-5">Max Smith
+															<div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::user()->name }}
 															<span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
-															<a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+															<a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
 														</div>
 														<!--end::Username-->
 													</div>
@@ -440,8 +440,15 @@ License: For each use you must have a valid license purchased only from above li
 											
 												<!--begin::Menu item-->
 												<div class="menu-item px-5">
-													<a href="" class="menu-link px-5">Sign Out</a>
+													<a href="" class="menu-link px-5" href="{{ route('logout') }}"
+													onclick="event.preventDefault();
+																	document.getElementById('logout-form').submit();">Sign Out</a>
+
+														<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+															@csrf
+														</form>
 												</div>
+									
 												<!--end::Menu item-->
 												<!--begin::Menu separator-->
 												<div class="separator my-2"></div>

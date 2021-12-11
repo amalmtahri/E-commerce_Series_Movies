@@ -19,7 +19,7 @@ use App\Http\Controllers\CategorieController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('HomePage');
 });
 Route::get('/movies', function () {
     return view('Dashboard.movies.index');
