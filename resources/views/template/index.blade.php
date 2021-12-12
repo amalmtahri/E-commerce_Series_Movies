@@ -5,8 +5,8 @@
 
 @endpush
 
-<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg"
-    style="background-image: url('{{url('assets/media/6993439.png')}}');background-size: cover;background-position: center;">
+<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg vh-100"
+    style="background-image: url('{{url('assets/media/squid-game-3b.jpg')}}');background-size: cover;background-position: center;">
     <!--begin::Header-->
     <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
         data-kt-sticky-offset="{default: '200px', lg: '300px'}">
@@ -119,9 +119,9 @@
         <!--begin::Heading-->
         <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
             <!--begin::Title-->
-            <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">
-                <br />Square Movies</h1>
-                <p class="text-white">If you’re looking for movies that the whole family can enjoy, then Disney Plus is simply unbeatable. You’ll find almost every Disney movie on there, along with the entire back catalog of Pixar, Marvel, and Star Wars movies. That’s a staggering amount of top quality movies for you to watch.</p>
+                <h1 class="text-white lh-base fw-bolder fs-4x mb-15">
+                    <br />SQUARE MOVIES</h1>
+                <p class="text-white mx-auto mb-20 w-75" style="font-size: 1.3rem!important;">If you’re looking for movies that the whole family can enjoy, then Disney Plus is simply unbeatable. You’ll find almost every Disney movie on there, along with the entire back catalog of Pixar, Marvel, and Star Wars movies. That’s a staggering amount of top quality movies for you to watch.</p>
             <!--end::Title-->
             <!--begin::Action-->
             <a href="{{ route('ourMovies') }}" class="btn btn-primary btn-hover-rise me-5">Our Movies</a>
@@ -132,7 +132,7 @@
     <!--end::Landing hero-->
 </div>
 <!--begin::Container-->
-<div class="container">
+{{-- <div class="container">
     <div class="mb-0" id="home">
         <!--begin::Wrapper-->
 
@@ -149,5 +149,5 @@
     </div>
     <!--end::Header Section-->
 
-</div>
+</div> --}}
 @endsection

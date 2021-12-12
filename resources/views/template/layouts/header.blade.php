@@ -20,7 +20,7 @@
                         <!--end::Mobile menu toggle-->
                         <!--begin::Logo image-->
                         <a href="{{ route('index')}}">
-                            <img alt="Logo" src="assets/media/logos/logo-landing.svg" class="logo-default h-25px h-lg-30px" />
+                            <img alt="Logo" src="{{ asset('assets/media/logos/logo-landing.svg')}}" class="logo-default h-25px h-lg-30px" />
                         </a>
                         <!--end::Logo image-->
                     </div>

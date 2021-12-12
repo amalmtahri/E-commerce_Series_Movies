@@ -201,12 +201,12 @@
 <body>
 
     <!--begin::Main-->
-		<div class="d-flex flex-column flex-root">
+		<div class="d-flex ">
 			<!--begin::Header Section-->
 			
 
 			@if (Request::route()->getName()!=='index')
-				@include('template.layouts.header');
+				@include('template.layouts.header')
 			@endif
 			<!--end::Header Section-->
 			<!--begin::How It Works Section-->
@@ -217,7 +217,7 @@
 			<!--end::How It Works Section-->
 			
             {{-- begin:: footer  --}}
-            @include('template.layouts.footer');
+            @include('template.layouts.footer')
             {{-- end:: footer  --}}
 
 
