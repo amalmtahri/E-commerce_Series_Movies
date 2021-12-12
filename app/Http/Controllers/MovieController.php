@@ -21,7 +21,7 @@ class MovieController extends Controller
         return view('Dashboard.movies.index',['movies'=>$listMovies,'categories'=>$categories]);
         }
         else{
-            return redirect('home');
+            return redirect(route('index'));
         }
     }
     public function ourMovies(){

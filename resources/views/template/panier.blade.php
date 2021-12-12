@@ -36,7 +36,6 @@
              @else
                     <tr>
                          <td><img src="{{url('assets/img/'.$cardLine->productToBuy->product->poster)}} " class="rounded-circle" width="50px" height="50px" alt=""> </td>
-
                         <td>{{$cardLine->productToBuy->product->name}}</td>
                         <td>{{$cardLine->productToBuy->product->price}}</td>
                         <td>
