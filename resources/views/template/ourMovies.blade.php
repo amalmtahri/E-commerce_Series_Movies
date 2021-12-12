@@ -109,32 +109,24 @@
 
         <div class="cardcontainer">
             <div class=" container ">
-                <div class="card" style="background-image:url('{{url('assets/img/'.$movie->poster)}}')">
-
-
+                <div class="card" style="background-image:url('{{url('assets/img/'.$movie->poster)}}') ; background-size:cover;">
                     <div class="contentBx">
-
                         <h2>{{$movie->name}}</h2>
-
                         <div class="size">
                             <h3>Price: {{$movie->price}} DH</h3>
                         </div>
                         <form action="{{ route('productToBuy') }}" method="POST">
                             {{ csrf_field() }}
                             <input type="hidden" value="{{$movie->id}}" name="idMovie">
-                            <button class="border-none" type="submit"><a>Buy now</a></button>
+                            <button class="border-none" style=" background-color: Transparent; border:none;" type="submit"><a>Add to card</a></button>
                         </form>
-
                     </div>
-
                 </div>
             </div>
         </div>
-
         <!--end::Feature post-->
     </div>
     <!--end::Col-->
-
     @endforeach
 </div>
 <!--end::Row-->

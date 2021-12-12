@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\ProductToBuy;
 use App\Models\CardLine;
+use App\Models\Card;
 use Illuminate\Http\Request;
 
 use App\Models\Movie;
@@ -29,6 +30,17 @@ class ProductToBuyController extends Controller
     {
         //
     }
+    public function createCard(){
+        $user=Auth::user();
+        $cards=Card::all()->where('user_id',$user->id);
+        //die($cards);
+        if($cards->isEmpty()){
+            $card=new Card();
+            $card->user_id=$user->id;
+            $card->save();
+        }
+        
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,6 +50,7 @@ class ProductToBuyController extends Controller
      */
     public function addMovie(Request $request)
     {
+        $this->createCard();
         $product = new ProductToBuy();
         $product->movie_id = $request->input('idMovie');
         $product->save();
@@ -51,6 +64,7 @@ class ProductToBuyController extends Controller
 
     public function addSeason(Request $request)
     {
+        $this->createCard();
         $product = new ProductToBuy();
         $product->season_id = $request->input('idSeason');
         $product->save();

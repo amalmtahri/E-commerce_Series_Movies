@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:8806
--- Généré le : Dim 12 déc. 2021 à 12:21
+-- Généré le : Dim 12 déc. 2021 à 13:37
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.9
 
@@ -29,10 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cards` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `client_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `cards`
+--
+
+INSERT INTO `cards` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2021-12-12 11:02:50', '2021-12-12 11:02:50');
 
 -- --------------------------------------------------------
 
@@ -66,7 +73,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Action', '2021-12-12 11:15:27', '2021-12-12 11:15:27');
+(1, 'Action', '2021-12-12 11:15:27', '2021-12-12 11:15:27'),
+(2, 'Drama', '2021-12-12 10:25:57', '2021-12-12 10:25:57'),
+(3, 'Comedy', '2021-12-12 10:26:04', '2021-12-12 10:26:04'),
+(4, 'Carton', '2021-12-12 10:26:13', '2021-12-12 10:26:13');
 
 -- --------------------------------------------------------
 
@@ -152,7 +162,10 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`id`, `name`, `price`, `description`, `poster`, `categorie_id`, `created_at`, `updated_at`) VALUES
-(1, 'Les Évadés', '20', 'Le banquier Andy Dufresne est arrêté pour avoir tué sa femme et son amant. Après une dure adaptation, il tente d\'améliorer les conditions de la prison et de redonner de l\'espoir à ses compagnons.', '1795547366.png', 1, '2021-12-12 10:16:08', '2021-12-12 10:16:08');
+(1, 'Les Évadés', '20', 'Le banquier Andy Dufresne est arrêté pour avoir tué sa femme et son amant. Après une dure adaptation, il tente d\'améliorer les conditions de la prison et de redonner de l\'espoir à ses compagnons.', '1795547366.png', 1, '2021-12-12 10:16:08', '2021-12-12 10:16:08'),
+(2, '12 Hommes en colère', '15', 'Un juré réfractaire tente d\'empêcher une erreur judiciaire en forçant les autres membres du jury à réexaminer les preuves.', '397503415.png', 1, '2021-12-12 10:24:33', '2021-12-12 10:24:33'),
+(3, 'Inception', '20', 'Un voleur qui s\'approprie des secrets d\'entreprise à l\'aide d\'une technique de partage de rêves se voit contraint d\'effectuer la tâche inverse : implanter une idée dans l\'esprit d\'un PDG, pour revoir ses enfants.', '723696806.jpg', 1, '2021-12-12 10:25:42', '2021-12-12 10:25:42'),
+(4, 'Le voyage de Chihiro', '30', 'Lorsque sa famille déménage en banlieue, une fillette de dix ans renfrognée découvre un monde régi par des dieux, des sorcières et des esprits où les humains sont transformés en animaux.', '587159523.jpg', 4, '2021-12-12 10:27:24', '2021-12-12 10:27:24');
 
 -- --------------------------------------------------------
 
@@ -212,6 +225,15 @@ CREATE TABLE `product_to_buys` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `product_to_buys`
+--
+
+INSERT INTO `product_to_buys` (`id`, `season_id`, `movie_id`, `created_at`, `updated_at`) VALUES
+(1, NULL, 1, '2021-12-12 10:38:45', '2021-12-12 10:38:45'),
+(2, NULL, 1, '2021-12-12 10:41:42', '2021-12-12 10:41:42'),
+(3, NULL, 1, '2021-12-12 11:04:07', '2021-12-12 11:04:07');
+
 -- --------------------------------------------------------
 
 --
@@ -248,7 +270,9 @@ CREATE TABLE `series` (
 --
 
 INSERT INTO `series` (`id`, `name`, `price`, `description`, `poster`, `categorie_id`, `created_at`, `updated_at`) VALUES
-(1, 'Squide Game', '20', 'Des personnes en difficultés financières sont invitées à une mystérieuse compétition de survie. Participant à une série de jeux traditionnels pour enfants, mais avec des rebondissements mortels, elles risquent leur vie pour une grosse somme d\'argent.', '119435750.png', 1, '2021-12-12 10:17:55', '2021-12-12 10:17:55');
+(1, 'Squide Game', '20', 'Des personnes en difficultés financières sont invitées à une mystérieuse compétition de survie. Participant à une série de jeux traditionnels pour enfants, mais avec des rebondissements mortels, elles risquent leur vie pour une grosse somme d\'argent.', '119435750.png', 1, '2021-12-12 10:17:55', '2021-12-12 10:17:55'),
+(2, 'Friends', '15', 'Suit les vies personnelles et professionnelles de six amis d\'une vingtaine et trentaine d\'années vivant à Manhattan.', '1977940004.jpg', 3, '2021-12-12 10:28:28', '2021-12-12 10:28:28'),
+(3, 'Game of Thrones', '20', 'Neuf nobles familles se battent pour le contrôle des terres mythiques de Westeros, tandis qu\'un ancien ennemi revient après avoir été endormi pendant des milliers d\'années.', '807773093.jpg', 1, '2021-12-12 10:30:02', '2021-12-12 10:30:02');
 
 -- --------------------------------------------------------
 
@@ -285,7 +309,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 --
 ALTER TABLE `cards`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cards_client_id_foreign` (`client_id`);
+  ADD KEY `fk_user` (`user_id`);
 
 --
 -- Index pour la table `card_lines`
@@ -387,19 +411,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `card_lines`
 --
 ALTER TABLE `card_lines`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `episodes`
@@ -423,7 +447,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pour la table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `orders`
@@ -441,7 +465,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT pour la table `product_to_buys`
 --
 ALTER TABLE `product_to_buys`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `seasons`
@@ -453,7 +477,7 @@ ALTER TABLE `seasons`
 -- AUTO_INCREMENT pour la table `series`
 --
 ALTER TABLE `series`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -469,7 +493,7 @@ ALTER TABLE `users`
 -- Contraintes pour la table `cards`
 --
 ALTER TABLE `cards`
-  ADD CONSTRAINT `cards_client_id_foreign` FOREIGN KEY (`client_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `card_lines`

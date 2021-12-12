@@ -104,7 +104,7 @@
         <!--begin::Feature post-->
         <div class="cardcontainer">
             <div class=" container ">
-                <div class="card" style="background-image:url('{{url('assets/img/'.$serie->poster)}}')">
+                <div class="card" style="background-image:url('{{url('assets/img/'.$serie->poster)}}') ; background-size:cover;">
                     <div class="contentBx">
                         <h2>{{$serie->name}}</h2>
                         <div class="size">
