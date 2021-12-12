@@ -1,5 +1,5 @@
 <!--begin::Footer Section-->
-<div class="mb-0">
+<div class="mb-0 mt-20" >
 				<!--begin::Curve top-->
 				<div class="landing-curve landing-dark-color">
 					<svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,8 +19,8 @@
 							<!--begin::Copyright-->
 							<div class="d-flex align-items-center order-2 order-md-1">
 								<!--begin::Logo-->
-								<a href="../../demo1/dist/landing.html">
-									<img alt="Logo" src="assets/media/logos/logo-landing.svg" class="h-15px h-md-20px" />
+								<a href="{{ route('index')}}">
+									<img alt="Logo" src="{{ asset('assets/media/logos/logo-landing.svg')}}" class="h-15px h-md-20px" />
 								</a>
 								<!--end::Logo image-->
 								<!--begin::Logo image-->

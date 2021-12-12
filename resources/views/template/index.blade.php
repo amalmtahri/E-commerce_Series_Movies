@@ -1,8 +1,12 @@
 @extends('template.layouts.app')
 
 @section('content')
-@push('test')
-
+@push('homecss')
+<style>
+    body{
+        overflow-y:hidden;
+    }
+</style>
 @endpush
 
 <div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg vh-100"

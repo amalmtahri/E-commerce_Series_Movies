@@ -24,7 +24,7 @@
 		<link href="{{ asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/dropify.css')}}" rel="stylesheet" type="text/css" />
 
-		
+		@stack('homecss')
 		
 		<!--end::Global Stylesheets Bundle-->
 </head>
@@ -201,7 +201,7 @@
 <body>
 
     <!--begin::Main-->
-		<div class="d-flex ">
+		<div class="d-flex flex-column">
 			<!--begin::Header Section-->
 			
 
@@ -217,7 +217,9 @@
 			<!--end::How It Works Section-->
 			
             {{-- begin:: footer  --}}
-            @include('template.layouts.footer')
+            @if (Request::route()->getName()!=='index')
+				@include('template.layouts.footer')
+			@endif
             {{-- end:: footer  --}}
 
 
