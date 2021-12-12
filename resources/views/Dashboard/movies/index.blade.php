@@ -72,7 +72,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         {{ csrf_field() }}
                         <label for="">Poster :</label>
-                        <input name="poster" type="file" class="dropify" data-height="100" />
+                        <input type="file" name="poster" class="dropify" data-default-file="{{url('assets/img/'.$movie->poster)}}" />
                         </div>
                         <div class="col-lg-8">
                                 <div class="form-group mb-5">

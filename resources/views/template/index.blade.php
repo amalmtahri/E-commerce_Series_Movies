@@ -124,7 +124,7 @@
                 <p class="text-white">If you’re looking for movies that the whole family can enjoy, then Disney Plus is simply unbeatable. You’ll find almost every Disney movie on there, along with the entire back catalog of Pixar, Marvel, and Star Wars movies. That’s a staggering amount of top quality movies for you to watch.</p>
             <!--end::Title-->
             <!--begin::Action-->
-            <a href="{{ route('ourMovies') }}" class="btn btn-primary">Our Movies</a>
+            <a href="{{ route('ourMovies') }}" class="btn btn-primary btn-hover-rise me-5">Our Movies</a>
             <!--end::Action-->
         </div>
         <!--end::Heading-->

@@ -24,7 +24,13 @@
                          <td><img src="{{url('assets/img/'.$cardLine->productToBuy->product->serie->poster)}} " class="rounded-circle" width="50px" height="50px" alt=""> </td>
                         <td>{{$cardLine->productToBuy->product->serie->name." Season ".$cardLine->productToBuy->product->numbreSeason}}</td>
                         <td>{{$cardLine->productToBuy->product->serie->price}}</td>
-                        <td></td>
+                        <td>
+                            <form action="{{ route('cardLine.destroy',$cardLine->id) }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field("DELETE") }}
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </form>
+                        </td>
                     </tr>
                     @php $total = $total +$cardLine->productToBuy->product->serie->price  @endphp
              @else
@@ -33,7 +39,13 @@
 
                         <td>{{$cardLine->productToBuy->product->name}}</td>
                         <td>{{$cardLine->productToBuy->product->price}}</td>
-                        <td></td>
+                        <td>
+                            <form action="{{ route('cardLine.destroy',$cardLine->id) }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field("DELETE") }}
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </form>
+                        </td>
                     </tr>
                     @php $total  =$total + $cardLine->productToBuy->product->price @endphp
                 

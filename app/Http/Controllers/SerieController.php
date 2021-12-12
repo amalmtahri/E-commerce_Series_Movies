@@ -23,9 +23,16 @@ class SerieController extends Controller
 
     public function ourSeries(){
         $listSeries = Serie::all();
-        return view('template.ourSeries',['series'=>$listSeries]);
+        $categories = Categorie::all();
+        return view('template.ourSeries',['series'=>$listSeries,'categories'=>$categories]);
     }
-
+    public function filtreSeries(Request $request)
+    {
+        $id_category = $request->input('category_id');
+        $listSeries = Serie::all()->where('categorie_id',$id_category);
+        $categories = Categorie::all();
+        return view('template.ourSeries',['series'=>$listSeries,'categories'=>$categories]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -100,11 +107,15 @@ class SerieController extends Controller
         $serie = Serie::find($id);
         $serie->name = $request->input('name');
         $serie->price = $request->input('price');
+        $serie->categorie_id = $request->input('cetegory');
         $serie->description = $request->input('description');
-        $image = $request->file('poster');
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $serie->poster =$new_name;
-        $image->move(public_path('assets/img'), $new_name);
+        if($request->file('poster') != null){
+            $image = $request->file('poster');
+            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $serie->poster =$new_name;
+            $image->move(public_path('assets/img'), $new_name);
+        }
+    
         $serie->save();
         return redirect('series');
     }

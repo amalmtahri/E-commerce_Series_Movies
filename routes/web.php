@@ -7,7 +7,7 @@ use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CardLineController;
-use App\Http\Controllers\ProductToBuyController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,8 @@ Route::get('/movies', function () {
 Route::get('/',[App\Http\Controllers\HomeController::class, 'index'])->name('index');
 //page our Movies
 Route::get('/ourMovies',[App\Http\Controllers\MovieController::class, 'ourMovies'])->name('ourMovies');
+Route::post('/filtreMovies',[App\Http\Controllers\MovieController::class, 'filtreMovies'])->name('filtreMovies');
+Route::post('/filtreSeries',[App\Http\Controllers\SerieController::class, 'filtreSeries'])->name('filtreSeries');
 //page our series
 Route::get('/ourSeries',[App\Http\Controllers\SerieController::class, 'ourSeries'])->name('ourSeries');
 
@@ -38,14 +40,14 @@ Route::resource('/seasons', SeasonController::class);
 Route::resource('/episodes', EpisodeController::class);
 Route::resource('/categories', CategorieController::class);
 Route::resource('/cardLine', CardLineController::class);
+Route::resource('/clients', UserController::class);
 Route::post('/productToBuy', [App\Http\Controllers\ProductToBuyController::class, 'addMovie'])->name('productToBuy');
 Route::post('/addSeason', [App\Http\Controllers\ProductToBuyController::class, 'addSeason'])->name('addSeason');
 Route::get('/panier', [App\Http\Controllers\CardController::class, 'clientCardItems'])->name('panier');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/dashboard',[App\Http\Controllers\MovieController::class, 'index'])->name('admin.route')->middleware('admin');
-Route::get('/client', [App\Http\Controllers\MovieController::class, 'index'])->name('client');
-Route::get('/admin', [App\Http\Controllers\SeasonController::class, 'index'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\MovieController::class, 'index'])->name('admin');
 
+Auth::routes();

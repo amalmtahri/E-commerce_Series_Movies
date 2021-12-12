@@ -88,8 +88,11 @@ class CardLineController extends Controller
      * @param  \App\Models\CardLine  $cardLine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CardLine $cardLine)
+    public function destroy(Request $request, $id)
     {
         //
+        $cardLine = CardLine::find($id);
+        $cardLine->delete();
+        return back();
     }
 }

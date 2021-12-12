@@ -1,5 +1,5 @@
 
-        <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+        <div class="landing-header bg-dark" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
             <!--begin::Container-->
             <div class="container">
                 <!--begin::Wrapper-->
@@ -70,21 +70,13 @@
                     @else
                        
                         <div class="menu-item px-5">
-                        <a class="btn btn-secondary" href="{{ route('panier') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                    <a class="btn btn-secondary" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">Sign Out</a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-                           
-                         </div>
-
-                         
-                    
-
-                    @endguest
+                            <a class="btn btn-secondary" href="{{ route('panier') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            <a class="btn btn-secondary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign Out</a>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                        </div>
+                        @endguest
                     </div>
                     <!--end::Toolbar-->
                 </div>
@@ -92,5 +84,6 @@
             </div>
             <!--end::Container-->
         </div>
+
         <!--end::Header-->
     

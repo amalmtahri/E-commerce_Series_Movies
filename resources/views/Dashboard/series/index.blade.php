@@ -67,8 +67,8 @@
 					<div class="modal-body py-lg-10 px-lg-10 row">
                         <div class="col-lg-4">
                         <form action="{{ route('series.update',$serie->id) }}" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="_method" value="PUT">
                         {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="PUT">
                         <label for="">Poster :</label>
                         <input type="file" name="poster" class="dropify" data-default-file="{{url('assets/img/'.$serie->poster)}}" />
                         </div>
