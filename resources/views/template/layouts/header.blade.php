@@ -33,21 +33,21 @@
                                 <!--begin::Menu item-->
                                 <div class="menu-item">
                                     <!--begin::Menu link-->
-                                    <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="{{ route('index')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6 {{ Request::routeIs('index') ? 'active' : '' }}" href="{{ route('index')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
                                     <!--end::Menu link-->
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item">
                                     <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourMovies')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Movies</a>
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6 {{ Request::routeIs('ourMovies') ? 'active' : '' }}"  href="{{ route('ourMovies')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Movies</a>
                                     <!--end::Menu link-->
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item">
                                     <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ route('ourSeries')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Series</a>
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6 {{ Request::routeIs('ourSeries') ? 'active' : '' }}"  href="{{ route('ourSeries')}}" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Series</a>
                                     <!--end::Menu link-->
                                 </div>
                                 <!--end::Menu item-->

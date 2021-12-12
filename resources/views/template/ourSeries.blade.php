@@ -110,7 +110,7 @@
                         <div class="size">
                             <h3>Price: {{$serie->price}} DH</h3>
                         </div>
-                        <a href="{{ route('series.show',$serie->id) }}">View detail</a>
+                        <a href="{{ route('oneSeries',$serie->id) }}">View detail</a>
                     </div>
                 </div>
             </div>

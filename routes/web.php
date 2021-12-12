@@ -33,14 +33,21 @@ Route::post('/filtreMovies',[App\Http\Controllers\MovieController::class, 'filtr
 Route::post('/filtreSeries',[App\Http\Controllers\SerieController::class, 'filtreSeries'])->name('filtreSeries');
 //page our series
 Route::get('/ourSeries',[App\Http\Controllers\SerieController::class, 'ourSeries'])->name('ourSeries');
+Route::get('/oneSeries/{id}',[App\Http\Controllers\SerieController::class, 'show'])->name('oneSeries');;
 
-Route::resource('/movies', MovieController::class);
-Route::resource('/series', SerieController::class);
-Route::resource('/seasons', SeasonController::class);
-Route::resource('/episodes', EpisodeController::class);
-Route::resource('/categories', CategorieController::class);
+Route::middleware(['auth','isAdmin'])->group(
+    function(){
+        Route::resource('/movies', MovieController::class);
+        Route::resource('/series', SerieController::class);
+        Route::resource('/seasons', SeasonController::class);
+        Route::resource('/episodes', EpisodeController::class);
+        Route::resource('/categories', CategorieController::class);
+      
+        Route::resource('/clients', UserController::class);
+    }
+);
 Route::resource('/cardLine', CardLineController::class);
-Route::resource('/clients', UserController::class);
+
 Route::post('/productToBuy', [App\Http\Controllers\ProductToBuyController::class, 'addMovie'])->name('productToBuy');
 Route::post('/addSeason', [App\Http\Controllers\ProductToBuyController::class, 'addSeason'])->name('addSeason');
 Route::get('/panier', [App\Http\Controllers\CardController::class, 'clientCardItems'])->name('panier');
